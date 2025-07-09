@@ -1,0 +1,24 @@
+{
+    "model_name": "gpt2",
+    "model_type": "causal",
+    "quantization": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "float16",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_8bit": false,
+      "llm_int8_threshold": 6.0,
+      "llm_int8_has_fp16_weight": false,
+      "llm_int8_skip_modules": null
+    },
+    "calibration_data_path": "pruning_toolkit/data/calibration_data_causal.json",
+    "output_scores_path": "causal_activation_scores.pt",
+    "plot_distribution": true,
+    "plot_save_path": "causal_score_distribution_histogram.png",
+    "batch_size": 1,
+    "pruning_percentages": [10, 25, 50, 75, 90, 99],
+    "calibration_src_lang": null,  
+    "calibration_tgt_lang": null,  
+    "calibration_max_length": 128,
+    "target_layers": null 
+  }

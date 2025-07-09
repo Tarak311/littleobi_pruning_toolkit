@@ -1,0 +1,24 @@
+  {
+      "model_name": "ai4bharat/indictrans2-indic-indic-dist-320M",
+      "model_type": "seq2seq",
+      "quantization": {
+        "load_in_4bit": true,
+        "bnb_4bit_quant_type": "nf4",
+        "bnb_4bit_compute_dtype": "bfloat16",
+        "bnb_4bit_use_double_quant": true,
+        "load_in_8bit": false,
+        "llm_int8_threshold": 6.0,
+        "llm_int8_has_fp16_weight": false,
+        "llm_int8_skip_modules": null
+      },
+      "calibration_data_path": "pruning_toolkit/data/calibration_data_seq2seq.json",
+      "output_scores_path": "seq2seq_activation_scores.pt",
+      "plot_distribution": true,
+      "plot_save_path": "seq2seq_score_distribution_histogram.png",
+      "batch_size": 1,
+      "pruning_percentages": [10, 25, 50, 75, 90, 99],
+      "calibration_src_lang": "guj_Gujr",
+      "calibration_tgt_lang": "eng_Latn",
+      "calibration_max_length": 128,
+      "target_layers": null 
+    }
